@@ -7,8 +7,11 @@ const server = http.createServer((req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.writeHead(200, { "Content-Type": "text/txt" });
     fs.createReadStream(
-      "/Users/it012306/Desktop/node/mikalto/js/modules/card/cardDatabase.txt"
+      "/Users/it012306/Desktop/node/mikalto/modules/card/cardDatabase.txt"
     ).pipe(res);
+  }
+  else{
+    res.end("no routes");
   }
 });
 server.listen(3000, "127.0.0.1",(err)=>{

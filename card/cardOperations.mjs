@@ -1,11 +1,17 @@
-// import * as cardData from "./cardDB.mjs";
+import * as cardData from "./cardDB.mjs";
 import * as fs from "fs";
-let cardValues = "";
+const cardArray = JSON.stringify(cardData);
 
 try {
-  let resultOfread = fs.readFileSync("./cardDatabase.txt");
-      cardValues = JSON.parse(resultOfread);
+  let resultofWrite = fs.writeFile("./cardDatabase.txt",cardArray,(err)=> {
+    if(err){
+      console.log(err);
+    }
+    else{
       console.log("succeeded");
+    }
+  });
+  console.log("succeeded");
 } catch (err) {
   console.log(err);
 }

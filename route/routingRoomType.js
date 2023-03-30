@@ -6,7 +6,7 @@ const server = http.createServer((req, res) => {
       res.setHeader("Access-Control-Allow-Origin", "*");
       res.writeHead(200, { "Content-Type": "text/txt" });
       fs.createReadStream(
-        "/Users/it012306/Desktop/node/mikalto/js/modules/roomtype/roomTypeDB.txt"
+        "/Users/it012306/Desktop/node/mikalto/modules/roomtype/roomTypeDB.txt"
       ).pipe(res);
     }
   });
