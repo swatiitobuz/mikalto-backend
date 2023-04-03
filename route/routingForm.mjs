@@ -1,10 +1,8 @@
 import http from "http";
-import { parse } from "querystring";
 import * as fs from "fs/promises";
 let port = "5000";
 
 async function writeDetails(data) {
-  // const accessData = JSON.parse(data);
   let reasultofRead = await fs.readFile("./formDB.txt", "utf-8", (err) => {
     if (err) {
       console.log(err);
